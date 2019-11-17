@@ -2,7 +2,7 @@ import dbus from 'dbus-next';
 import { isArray, join, last, reduce, split, toLower } from 'lodash';
 
 // Enable BigInt compatibility mode - https://www.npmjs.com/package/dbus-next#node-compatibility
-//dbus.setBigIntCompat(true);
+dbus.setBigIntCompat(true);
 
 import {
   SpotifyAction,

@@ -33,6 +33,7 @@ declare module 'dbus-next' {
       name?: string;
       disabled?: boolean;
     }
+
     export interface SignalOptions {
       signature: string;
       name?: string;
@@ -47,14 +48,19 @@ declare module 'dbus-next' {
         signals?: { [key: string]: SignalOptions };
       }): void;
     }
+
     export function property(opts: PropertyOptions): PropertyDecorator;
+
     export function method(opts: MethodOptions): MethodDecorator;
+
     export function signal(opts: SignalOptions): MethodDecorator;
   }
+
   export class Variant<T = any> {
     signature: string;
     value: T;
   }
+
   export class DBusError extends Error {
     type: string;
     text: string;
@@ -76,6 +82,7 @@ declare module 'dbus-next' {
     body?: any[];
     flags?: MessageFlag;
   }
+
   export class Message {
     type: MessageType;
     serial: number | null;
@@ -91,12 +98,15 @@ declare module 'dbus-next' {
     flags: MessageFlag;
 
     constructor(msg: MessageLike);
+
     static newError(msg: string, errorName, errorText?: string): Message;
+
     static newMethodReturn(
       msg: Message,
       signature?: string,
       body?: any[]
     ): Message;
+
     static newSignal(
       path: string,
       iface: string,
@@ -142,6 +152,8 @@ declare module 'dbus-next' {
   export interface ClientInterface extends EventEmitter {
     [name: string]: Function;
   }
+
+  export function setBigIntCompat(enable: boolean): void;
 
   export function systemBus(): MessageBus;
 
