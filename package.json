@@ -1,0 +1,69 @@
+{
+  "name": "@panz3r/spotify-js",
+  "version": "1.0.0-alpha.5",
+  "description": "A module to interact with local running Spotify client using a simple API",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panz3r/spotify-js.git"
+  },
+  "keywords": [
+    "spotify",
+    "node"
+  ],
+  "author": {
+    "name": "Mattia Panzeri",
+    "email": "mattia.panzeri93@gmail.com",
+    "url": "https://github.com/panz3r"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/panz3r/spotify-js/issues"
+  },
+  "homepage": "https://github.com/panz3r/spotify-js#readme",
+  "main": "dist/index.js",
+  "module": "dist/spotify-js.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "prebuild": "rimraf ./dist",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepublish": "yarn build"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/lodash": "^4.14.148",
+    "@types/spotify-node-applescript": "^1.1.0",
+    "husky": "^3.0.9",
+    "rimraf": "^3.0.0",
+    "tsdx": "^0.11.0",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "dbus-next": "^0.7.1",
+    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.15",
+    "open": "^7.0.0",
+    "spotify-node-applescript": "^1.1.1"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
