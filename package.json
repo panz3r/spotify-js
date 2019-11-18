@@ -1,6 +1,6 @@
 {
   "name": "@panz3r/spotify-js",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "A module to interact with local running Spotify client using a simple API",
   "repository": {
     "type": "git",
